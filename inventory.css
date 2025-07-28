@@ -1,0 +1,55 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* MODAL STYLES
+-------------------------------*/
+.jw-modal {
+  /* modals are hidden by default */
+  display: none;
+
+  /* modal container fixed across whole screen */
+  position: fixed;
+  inset: 0;
+
+  /* z-index must be higher than everything else on the page */
+  z-index: 10000;
+
+  /* semi-transparent black background exposed by padding */
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 40px;
+
+  /* enables scrolling for tall modals */
+  overflow: auto;
+}
+#error {
+  color: red;
+}
+.jw-modal.open {
+  display: block;
+}
+
+.jw-modal-body {
+  margin: 0 auto;
+  width: 60%;
+  padding: 20px;
+  background: #fff;
+}
+
+body.jw-modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}
