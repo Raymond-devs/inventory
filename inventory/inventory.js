@@ -11,17 +11,11 @@
 let table = document.querySelector("table");
 
 let new_products = [];
-let Gadgets = [
+let Gadgets = JSON.parse(localStorage.getItem("inventory")) || [
   { name: "keyboard", price: 100, quantityAvail: 20, inStock: "in stock" },
   { name: "phone", price: 50, quantityAvail: 10, inStock: "in stock" },
   { name: "mouse", price: 50, quantityAvail: 0, inStock: "out of stock" },
 ];
-
-// let Food_Stuff = [
-//   { name: "rice", price: 1000, inStock: true },
-//   { name: "beans", price: 50, inStock: false },
-//   { name: "bread", price: 50, inStock: false },
-// ];
 
 Gadgets.forEach((gadget, index) => {
   let item = ` 
@@ -30,6 +24,7 @@ Gadgets.forEach((gadget, index) => {
           <td>${gadget.price}</td>
           <td>${gadget.quantityAvail}</td>
           <td>${gadget.inStock}</td>
+          <td onclick="openModal('modal-2')" style="color: blue; cursor: pointer; text-decoration: underline;">Edit</td>
         </tr>`;
   table.innerHTML += item;
 });
@@ -68,12 +63,11 @@ function addItem() {
       inStock: prod_status,
     };
     Gadgets.push(newProducts);
+    let toString = JSON.stringify(Gadgets);
+    console.log(toString);
     displayNewProduct(newProducts);
+    localStorage.setItem("inventory", toString);
     console.log(Gadgets);
-
-    document.getElementById("prod-name").value = "";
-    document.getElementById("prod-price").value = "";
-    document.getElementById("prod-quantity").value = "";
   }
 }
 
@@ -84,6 +78,7 @@ function displayNewProduct(product) {
           <td>${product.price}</td>
           <td>${product.quantityAvail}</td>
           <td>${product.inStock}</td>
+          <td style="color: blue; cursor: pointer; text-decoration: underline;">Edit</td>
         </tr>`;
   table.innerHTML += new_prod;
 }

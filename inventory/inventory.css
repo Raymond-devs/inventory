@@ -1,0 +1,143 @@
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+/* BUTTONS */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* TABLE */
+.container {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  text-align: left;
+  padding: 12px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+td {
+  background-color: white;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+tr:hover td {
+  background-color: #f1f5f9;
+}
+
+/* STATUS BADGE */
+.status {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.status.in-stock {
+  background-color: #28a745;
+}
+
+.status.out-of-stock {
+  background-color: #dc3545;
+}
+
+/* MODAL */
+.jw-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 40px;
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.jw-modal.open {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.jw-modal-body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* FORM STYLING */
+.jw-modal input[type="text"],
+.jw-modal input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.jw-modal input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.jw-modal input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* ERROR MESSAGE */
+#error {
+  color: red;
+  font-size: 13px;
+}
+
+/* HIDE SCROLL WHEN MODAL OPEN */
+body.jw-modal-open {
+  overflow: hidden;
+}

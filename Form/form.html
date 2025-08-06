@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Contact Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" class="input-field">
+                <div class="error-message" id="name-error">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="input-field">
+                <div class="error-message" id="email-error">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" class="input-field">
+                <div class="error-message" id="phone-error">Please fill out this field.</div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+
+</html>

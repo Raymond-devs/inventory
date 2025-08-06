@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groceries Inventory</title>
+    <link rel="stylesheet" href="inventory.css" />
+</head>
+
+<body>
+    <h1>Inventory</h1>
+    <button onclick="openModal('modal-1')">Add Product</button>
+
+    <!-- MODAL FOR ADD -->
+    <div id="modal-1" class="jw-modal">
+        <div class="jw-modal-body">
+            <form action="#">
+                <label>Product Name</label>
+                <input type="text" placeholder="Product name" id="prod-name" required />
+
+                <label>Product Price</label>
+                <input type="text" placeholder="Product price" id="prod-price" required />
+
+                <label>Product Quantity</label>
+                <input type="text" placeholder="Product quantity" id="prod-quantity" required />
+
+                <label>Status</label>
+                <input type="text" placeholder="Status" id="prod-status" disabled />
+
+                <p id="error"></p>
+
+                <input type="submit" value="Add Product" onclick="addItem()" />
+            </form>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <!-- MODAL FOR EDIT -->
+    <div id="modal-2" class="jw-modal">
+        <div class="jw-modal-body">
+            <form action="#">
+                <label>Product Name</label>
+                <input type="text" placeholder="Product name" id="prod-name" required />
+
+                <label>Product Price</label>
+                <input type="text" placeholder="Product price" id="prod-price" required />
+
+                <label>Product Quantity</label>
+                <input type="text" placeholder="Product quantity" id="prod-quantity" required />
+
+                <label>Status</label>
+                <input type="text" placeholder="Status" id="prod-status" disabled />
+
+                <p id="error"></p>
+
+                <input type="submit" value="Add Product" onclick="addItem()" />
+            </form>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price (NGN)</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>Rice</td>
+                <td>20</td>
+                <td>5</td>
+                <td><span class="status in-stock">In Stock</span></td>
+                <td><button class="edit-btn" onclick="openModal('modal-2')">Edit</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="Inventory.js"></script>
+    <script src="modal.js"></script>
+</body>
+
+</html>
